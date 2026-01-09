@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/string_sanitizer.dir/main.c.o -o string_sanitizer 
