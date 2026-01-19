@@ -40,10 +40,4 @@ int main(void)
 }
 
 
-/* uart_buf now contains:
-   "AT+DATA=123,45,OK"
-*/
-
-
-
 

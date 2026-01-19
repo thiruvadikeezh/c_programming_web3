@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/string_formatting.dir/test.c.o -o string_formatting 
