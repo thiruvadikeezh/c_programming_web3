@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/temp.dir/temp.c.o -o temp 
