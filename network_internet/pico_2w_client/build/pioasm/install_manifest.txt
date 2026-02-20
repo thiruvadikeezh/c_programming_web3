@@ -1,0 +1,5 @@
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/pioasm-install/pioasm/pioasm
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/pioasm-install/pioasm/pioasmTargets.cmake
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/pioasm-install/pioasm/pioasmTargets-release.cmake
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/pioasm-install/pioasm/pioasmConfig.cmake
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/pioasm-install/pioasm/pioasmConfigVersion.cmake

@@ -1,0 +1,7 @@
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/_deps/picotool/picotool
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/_deps/picotool/picotoolTargets.cmake
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/_deps/picotool/picotoolTargets-release.cmake
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/_deps/picotool/picotoolConfig.cmake
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/_deps/picotool/picotoolConfigVersion.cmake
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/_deps/picotool/enc_bootloader.elf
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/_deps/picotool/enc_bootloader_mbedtls.elf

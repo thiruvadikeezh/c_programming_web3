@@ -1,0 +1,53 @@
+CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o: \
+ /home/sudharsan/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c \
+ /home/sudharsan/pico-sdk/src/rp2_common/pico_runtime_init/include/pico/runtime_init.h \
+ /home/sudharsan/pico-sdk/src/common/pico_base_headers/include/pico.h \
+ /home/sudharsan/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
+ /home/sudharsan/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
+ /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
+ /usr/include/newlib/assert.h /usr/include/newlib/_ansi.h \
+ /usr/include/newlib/newlib.h /usr/include/newlib/_newlib_version.h \
+ /usr/include/newlib/sys/config.h /usr/include/newlib/machine/ieeefp.h \
+ /usr/include/newlib/sys/features.h \
+ /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h \
+ /usr/lib/gcc/arm-none-eabi/13.2.1/include/stddef.h \
+ /home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/generated/pico_base/pico/version.h \
+ /home/sudharsan/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
+ /home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/generated/pico_base/pico/config_autogen.h \
+ /home/sudharsan/pico-sdk/src/boards/include/boards/pico2_w.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+ /home/sudharsan/pico-sdk/src/rp2350/pico_platform/include/pico/platform.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_regs/include/hardware/platform_defs.h \
+ /usr/include/newlib/sys/cdefs.h \
+ /usr/include/newlib/machine/_default_types.h \
+ /home/sudharsan/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/pico_platform_common/include/pico/platform/common.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/addressmap.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/sio.h \
+ /home/sudharsan/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/pico_runtime/include/pico/runtime.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/clocks.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/accessctrl.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/accessctrl.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/clocks.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/hardware_pll/include/hardware/pll.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pll.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pll.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/hardware_ticks/include/hardware/ticks.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/ticks.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/ticks.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/hardware_vreg/include/hardware/vreg.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/powman.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/powman.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/hardware_xosc/include/hardware/xosc.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/xosc.h \
+ /home/sudharsan/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/xosc.h
