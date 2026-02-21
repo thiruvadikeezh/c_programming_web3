@@ -12,13 +12,13 @@ CMakeFiles/pico_tcp_client.dir/main.c.o: \
  /usr/include/newlib/sys/lock.h /usr/include/newlib/sys/stdio.h \
  /usr/include/newlib/string.h /usr/include/newlib/sys/_locale.h \
  /usr/include/newlib/strings.h /usr/include/newlib/sys/string.h \
+ /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h \
  /home/sudharsan/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
  /home/sudharsan/pico-sdk/src/common/pico_base_headers/include/pico.h \
  /home/sudharsan/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
  /home/sudharsan/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
  /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdbool.h \
  /usr/include/newlib/assert.h \
- /usr/lib/gcc/arm-none-eabi/13.2.1/include/stdint.h \
  /home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/generated/pico_base/pico/version.h \
  /home/sudharsan/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
  /home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/generated/pico_base/pico/config_autogen.h \
