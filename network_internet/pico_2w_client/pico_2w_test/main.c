@@ -128,6 +128,28 @@ void tcp_connect_to_server()
 int main()
 {
     wifi_init();
+
+    tcp_connect_to_server();
+
+    while (1)
+    {
+	    led_blink(2);
+    }
+    while(1) {
+	    sleep_ms(1000);
+
+	    if(client_pcb) {
+		    const char *msg = "Hello from Pico 2W\n";
+		    printf("%s\n", msg);
+		    cyw43_arch_lwip_begin();
+
+		    tcp_write(client_pcb, msg, strlen(msg), TCP_WRITE_FLAG_COPY);
+		    tcp_output(client_pcb);
+
+		    cyw43_arch_lwip_end();
+	    }
+    }
+
 }
 
 
