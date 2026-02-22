@@ -1,0 +1,7 @@
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/pico_2w_test/build/pioasm/CMakeFiles/pioasm.dir
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/pico_2w_test/build/pioasm/CMakeFiles/edit_cache.dir
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/pico_2w_test/build/pioasm/CMakeFiles/rebuild_cache.dir
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/pico_2w_test/build/pioasm/CMakeFiles/list_install_components.dir
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/pico_2w_test/build/pioasm/CMakeFiles/install.dir
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/pico_2w_test/build/pioasm/CMakeFiles/install/local.dir
+/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/pico_2w_test/build/pioasm/CMakeFiles/install/strip.dir

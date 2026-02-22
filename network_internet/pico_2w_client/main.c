@@ -22,13 +22,15 @@ static err_t recv_callback(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_
 	if (!p) {
 		printf("Server Closed Conencted\n");
 		tcp_close(tpcb);
+		global_pcb = NULL;
 		return ERR_OK;
 	}
 
-	printf( "recevied from server: ");
+	printf( "recevied %d bytes from server: ", p->len);
 
 	fwrite(p->payload, 1, p->len, stdout);
 	printf("\n");
+
 
 	tcp_recved(tpcb, p->len);
 	pbuf_free(p);
@@ -78,26 +80,27 @@ void wifi_init(void)
 	printf("WIFI COnnected\n");
 }
 
+void tcp_connect_to_server(void)
+{
+	ip_addr_t server_ip;
+	ipaddr_aton(SERVER_IP, &server_ip);
+
+	struct tcp_pcb *pcb = tcp_new();
+
+	if (!pcb) {
+		printf("TCP Create Failed\n");
+		return;
+	}
+
+	printf("Connecting To Server.....\n");
+	tcp_connect(pcb, &server_ip, SERVER_PORT, connected_callback);
+}
 
 int main()
 {
 	wifi_init();
 	
-
-
-	ip_addr_t server_ip;
-	ipaddr_aton(SERVER_IP, &server_ip);
-
-	struct tcp_pcb *pcb = tcp_new();
-	
-	if (!pcb) {
-		printf("TCP Crete Failed\n");
-		return -1;
-	}
-
-	printf("Connecting To Server....\n");
-
-	tcp_connect(pcb, &server_ip, SERVER_PORT, connected_callback);
+	tcp_connect_to_server();
 	
 	uint32_t last_send = 0;
 

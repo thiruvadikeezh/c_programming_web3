@@ -114,7 +114,7 @@ CMakeFiles/pico_tcp_client.dir/main.c.o: \
  /home/sudharsan/pico-sdk/lib/cyw43-driver/src/cyw43_ll.h \
  /home/sudharsan/pico-sdk/lib/cyw43-driver/src/cyw43_country.h \
  /home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/include/pico/async_context.h \
- /home/sudharsan/pico-sdk/src/rp2_common/pico_cyw43_arch/include/pico/cyw43_arch/arch_threadsafe_background.h \
+ /home/sudharsan/pico-sdk/src/rp2_common/pico_cyw43_arch/include/pico/cyw43_arch/arch_poll.h \
  /home/sudharsan/pico-sdk/lib/lwip/src/include/lwip/tcp.h \
  /home/sudharsan/pico-sdk/lib/lwip/src/include/lwip/tcpbase.h \
  /home/sudharsan/pico-sdk/lib/lwip/src/include/lwip/icmp.h \

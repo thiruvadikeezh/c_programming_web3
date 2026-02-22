@@ -2635,19 +2635,19 @@ CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_cyw43
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sudharsan/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c -o CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.s
 
-CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o: CMakeFiles/pico_tcp_client.dir/flags.make
-CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o: /home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c
-CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o: CMakeFiles/pico_tcp_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_185) "Building C object CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o -MF CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o.d -o CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o -c /home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c
+CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o: CMakeFiles/pico_tcp_client.dir/flags.make
+CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o: /home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c
+CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o: CMakeFiles/pico_tcp_client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sudharsan/c_programming_web3/network_internet/pico_2w_client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_185) "Building C object CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o -MF CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o.d -o CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o -c /home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c
 
-CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c > CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
+CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c > CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.i
 
-CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s"
-	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c -o CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
+CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c -o CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.s
 
 # Object files for target pico_tcp_client
 pico_tcp_client_OBJECTS = \
@@ -2835,7 +2835,7 @@ pico_tcp_client_OBJECTS = \
 "CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/hardware_dma/dma.c.o" \
 "CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/hardware_exception/exception.c.o" \
 "CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.o" \
-"CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o"
+"CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o"
 
 # External object files for target pico_tcp_client
 pico_tcp_client_EXTERNAL_OBJECTS =
@@ -3024,7 +3024,7 @@ pico_tcp_client.elf: CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/
 pico_tcp_client.elf: CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/hardware_dma/dma.c.o
 pico_tcp_client.elf: CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/hardware_exception/exception.c.o
 pico_tcp_client.elf: CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_driver.c.o
-pico_tcp_client.elf: CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o
+pico_tcp_client.elf: CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o
 pico_tcp_client.elf: CMakeFiles/pico_tcp_client.dir/build.make
 pico_tcp_client.elf: pico-sdk/src/rp2350/boot_stage2/CMakeFiles/bs2_default_library.dir/bs2_default_padded_checksummed.S.o
 pico_tcp_client.elf: /home/sudharsan/pico-sdk/src/rp2_common/pico_crt0/rp2350/memmap_default.ld

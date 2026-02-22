@@ -3514,29 +3514,29 @@ home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico_tcp_client.dir/build.make CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s
 .PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_base.c.s
 
-home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.o: home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o
-.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.o
+home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.o: home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o
+.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.o
 
 # target to build an object file
-home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico_tcp_client.dir/build.make CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o
-.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.o
+home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico_tcp_client.dir/build.make CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o
+.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.o
 
-home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.i: home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
-.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.i
+home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.i: home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.i
+.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.i
 
 # target to preprocess a source file
-home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico_tcp_client.dir/build.make CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
-.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.i
+home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico_tcp_client.dir/build.make CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.i
+.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.i
 
-home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.s: home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
-.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.s
+home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.s: home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.s
+.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.s
 
 # target to generate assembly for a file
-home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico_tcp_client.dir/build.make CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
-.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.c.s
+home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico_tcp_client.dir/build.make CMakeFiles/pico_tcp_client.dir/home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.s
+.PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.c.s
 
 home/sudharsan/pico-sdk/src/rp2_common/pico_atomic/atomic.o: home/sudharsan/pico-sdk/src/rp2_common/pico_atomic/atomic.c.o
 .PHONY : home/sudharsan/pico-sdk/src/rp2_common/pico_atomic/atomic.o
@@ -4903,9 +4903,9 @@ help:
 	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_base.o"
 	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_base.i"
 	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_base.s"
-	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.o"
-	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.i"
-	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_threadsafe_background.s"
+	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.o"
+	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.i"
+	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_async_context/async_context_poll.s"
 	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_atomic/atomic.o"
 	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_atomic/atomic.i"
 	@echo "... home/sudharsan/pico-sdk/src/rp2_common/pico_atomic/atomic.s"
