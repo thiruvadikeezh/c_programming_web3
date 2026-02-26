@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/modbus_sim.dir/modbus_sim.c.o -o modbus_sim 
