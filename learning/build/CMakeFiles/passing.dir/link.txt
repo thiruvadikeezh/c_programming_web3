@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/passing.dir/main.c.o -o passing 
+/usr/bin/cc CMakeFiles/passing.dir/temp.c.o -o passing 

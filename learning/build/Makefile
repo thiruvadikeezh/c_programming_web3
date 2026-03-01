@@ -129,29 +129,29 @@ passing/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/passing.dir/build.make CMakeFiles/passing.dir/build
 .PHONY : passing/fast
 
-main.o: main.c.o
-.PHONY : main.o
+temp.o: temp.c.o
+.PHONY : temp.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/passing.dir/build.make CMakeFiles/passing.dir/main.c.o
-.PHONY : main.c.o
+temp.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/passing.dir/build.make CMakeFiles/passing.dir/temp.c.o
+.PHONY : temp.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+temp.i: temp.c.i
+.PHONY : temp.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/passing.dir/build.make CMakeFiles/passing.dir/main.c.i
-.PHONY : main.c.i
+temp.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/passing.dir/build.make CMakeFiles/passing.dir/temp.c.i
+.PHONY : temp.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+temp.s: temp.c.s
+.PHONY : temp.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/passing.dir/build.make CMakeFiles/passing.dir/main.c.s
-.PHONY : main.c.s
+temp.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/passing.dir/build.make CMakeFiles/passing.dir/temp.c.s
+.PHONY : temp.c.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... passing"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... temp.o"
+	@echo "... temp.i"
+	@echo "... temp.s"
 .PHONY : help
 
 

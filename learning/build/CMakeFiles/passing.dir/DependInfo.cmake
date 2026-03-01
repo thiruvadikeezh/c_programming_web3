@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/sudharsan/c_programming_web3/learning/main.c" "CMakeFiles/passing.dir/main.c.o" "gcc" "CMakeFiles/passing.dir/main.c.o.d"
+  "/home/sudharsan/c_programming_web3/learning/temp.c" "CMakeFiles/passing.dir/temp.c.o" "gcc" "CMakeFiles/passing.dir/temp.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

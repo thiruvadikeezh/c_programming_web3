@@ -69,28 +69,28 @@ include CMakeFiles/passing.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/passing.dir/flags.make
 
-CMakeFiles/passing.dir/main.c.o: CMakeFiles/passing.dir/flags.make
-CMakeFiles/passing.dir/main.c.o: /home/sudharsan/c_programming_web3/learning/main.c
-CMakeFiles/passing.dir/main.c.o: CMakeFiles/passing.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sudharsan/c_programming_web3/learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/passing.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/passing.dir/main.c.o -MF CMakeFiles/passing.dir/main.c.o.d -o CMakeFiles/passing.dir/main.c.o -c /home/sudharsan/c_programming_web3/learning/main.c
+CMakeFiles/passing.dir/temp.c.o: CMakeFiles/passing.dir/flags.make
+CMakeFiles/passing.dir/temp.c.o: /home/sudharsan/c_programming_web3/learning/temp.c
+CMakeFiles/passing.dir/temp.c.o: CMakeFiles/passing.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/sudharsan/c_programming_web3/learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/passing.dir/temp.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/passing.dir/temp.c.o -MF CMakeFiles/passing.dir/temp.c.o.d -o CMakeFiles/passing.dir/temp.c.o -c /home/sudharsan/c_programming_web3/learning/temp.c
 
-CMakeFiles/passing.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/passing.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sudharsan/c_programming_web3/learning/main.c > CMakeFiles/passing.dir/main.c.i
+CMakeFiles/passing.dir/temp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/passing.dir/temp.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sudharsan/c_programming_web3/learning/temp.c > CMakeFiles/passing.dir/temp.c.i
 
-CMakeFiles/passing.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/passing.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sudharsan/c_programming_web3/learning/main.c -o CMakeFiles/passing.dir/main.c.s
+CMakeFiles/passing.dir/temp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/passing.dir/temp.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sudharsan/c_programming_web3/learning/temp.c -o CMakeFiles/passing.dir/temp.c.s
 
 # Object files for target passing
 passing_OBJECTS = \
-"CMakeFiles/passing.dir/main.c.o"
+"CMakeFiles/passing.dir/temp.c.o"
 
 # External object files for target passing
 passing_EXTERNAL_OBJECTS =
 
-passing: CMakeFiles/passing.dir/main.c.o
+passing: CMakeFiles/passing.dir/temp.c.o
 passing: CMakeFiles/passing.dir/build.make
 passing: CMakeFiles/passing.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/sudharsan/c_programming_web3/learning/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable passing"
