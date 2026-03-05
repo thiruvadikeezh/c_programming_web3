@@ -14,7 +14,7 @@ void insertNode(Student **head, int id)
 
 	newNode->id = id;
 
-	Student ** indirect = head;
+	Student **indirect = head;
 
 	while( *indirect != NULL)
 	{
