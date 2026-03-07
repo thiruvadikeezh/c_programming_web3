@@ -1,3 +1,0 @@
-/home/sudharsan/c_programming_web3/learning/build/CMakeFiles/passing.dir
-/home/sudharsan/c_programming_web3/learning/build/CMakeFiles/edit_cache.dir
-/home/sudharsan/c_programming_web3/learning/build/CMakeFiles/rebuild_cache.dir

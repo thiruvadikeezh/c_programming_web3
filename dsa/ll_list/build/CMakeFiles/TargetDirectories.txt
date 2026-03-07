@@ -1,3 +1,0 @@
-/home/sudharsan/c_programming_web3/dsa/ll_list/build/CMakeFiles/ll_list.dir
-/home/sudharsan/c_programming_web3/dsa/ll_list/build/CMakeFiles/edit_cache.dir
-/home/sudharsan/c_programming_web3/dsa/ll_list/build/CMakeFiles/rebuild_cache.dir

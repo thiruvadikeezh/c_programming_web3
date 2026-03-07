@@ -1,3 +1,0 @@
-/home/sudharsan/c_programming_web3/network_internet/tcp_server/build/CMakeFiles/tcp_server.dir
-/home/sudharsan/c_programming_web3/network_internet/tcp_server/build/CMakeFiles/edit_cache.dir
-/home/sudharsan/c_programming_web3/network_internet/tcp_server/build/CMakeFiles/rebuild_cache.dir
