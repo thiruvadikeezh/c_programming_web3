@@ -19,6 +19,11 @@ int main()
 	id_1->id = 10;
 
 	printf("The Data After Modification is %d\n", id_1->id);
+
+	id_1->id = 15;
+
+	printf("The Data After Modification 2 is %d\n", id_1->id);
+
 	return 0;
 
 }
