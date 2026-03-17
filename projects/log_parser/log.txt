@@ -1,0 +1,4 @@
+[INFO] System started
+[WARNING] Low battery
+[ERROR] Sensor failure
+[ERROR] System Failure
