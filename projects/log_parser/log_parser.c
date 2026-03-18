@@ -4,20 +4,12 @@
 
 #include "log_parser.h"
 
-typedef struct 
-{
-	int info_count;
-	int warning_count;
-	int error_count;
-}logs;
-
-
-void parse_log_file(const char* filename)
+LogState parse_log_file(const char* filename)
 {
 	FILE *file;
 	char line[256];
 
-	logs log = {0};
+	LogState log = {0};
 
 	file = fopen(filename, "r");
 
@@ -26,7 +18,7 @@ void parse_log_file(const char* filename)
 		printf("Error Opening The File name\n");
 		perror("\nThis is an error printing message from perror\n");
 
-		return;
+		return log;
 
 	}
 
@@ -42,9 +34,8 @@ void parse_log_file(const char* filename)
 	}
 
 	fclose(file);
+	
 
-	printf("INFO: %d\n", log.info_count);
-	printf("ERROR: %d\n", log.error_count);
-	printf("WARNING: %d\n", log.warning_count);
+	return log;
 }
 
