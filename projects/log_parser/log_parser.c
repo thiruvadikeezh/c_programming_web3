@@ -32,10 +32,41 @@ LogState parse_log_file(const char* filename)
 			log.warning_count++;
 		}
 	}
-
 	fclose(file);
 	
 
 	return log;
 }
 
+
+int parse_the_file(const char* filename, LogState *out)
+{
+
+	FILE *file = fopen(filename, "r");
+
+	char line[256];
+
+	if( file == NULL)
+	{
+
+		perror("File Not Found");
+
+		return -1;
+	}
+
+	*out = (LogState){0}; //initialize
+	
+	while (fgets(line, sizeof(line), file))
+	{
+		if(strstr(line, "[INFO]"))
+			out->info_count++;
+		else if (strstr(line, "[WARNING]"))
+			out->warning_count++;
+		else if (strstr(line, "[ERROR]"))
+			out->error_count++;
+	}
+
+	fclose(file);
+	return 0; //success;
+
+}
