@@ -70,3 +70,12 @@ int parse_the_file(const char* filename, LogState *out)
 	return 0; //success;
 
 }
+
+
+void display_logs(LogState *msg)
+{
+	printf("info:\n");
+	printf("error:\n");
+	printf("warning:\n");
+}
+

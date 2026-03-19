@@ -26,6 +26,7 @@ int main()
 	printf("ERROR: %d\n", state.error_count);
 	printf("WARNING: %d\n", state.warning_count);
 
+	display_logs(&state);
 	return 0;
 }
 

@@ -14,4 +14,6 @@ LogState parse_log_file(const char* filename);
 
 int parse_the_file(const char* filename, LogState *out);
 
+void display_logs(LogState *msg);
+
 #endif
