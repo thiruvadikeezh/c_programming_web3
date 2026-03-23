@@ -2,3 +2,4 @@
 [WARNING] Low battery
 [ERROR] Sensor failure
 [ERROR] System Failure
+[WARNING] Over Current
