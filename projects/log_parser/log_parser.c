@@ -66,23 +66,17 @@ int parse_the_file(const char* filename, LogState *out)
 		
 		if(strstr(line, "[INFO]"))
 		{
-			out->info_log_lines[out->info_count] = line_number;
-			out->info_count++;
-			out->info_index++;
+			out->info_log_lines[out->info_count++] = line_number;
 		}
 		else if (strstr(line, "[WARNING]"))
 		{
 		
-			out->warning_log_lines[out->warning_index] = line_number;
-			out->warning_count++;
-			out->warning_index++;
+			out->warning_log_lines[out->warning_count++] = line_number;
 		}
 		else if (strstr(line, "[ERROR]"))
 		{
 
-			out->error_log_lines[out->error_index] = line_number;
-			out->error_count++;
-			out->error_index++;
+			out->error_log_lines[out->error_count++] = line_number;
 		}
 
 	}
@@ -98,23 +92,23 @@ void display_logs(LogState *msg)
 {
 	int i;
 	
-	printf("\nINFO:\n");
-	for(int i = 0 ; i<msg->info_count; i++)
+	printf("\nINFO_LOGS\n");
+	for(i = 0 ; i<msg->info_count; i++)
 	{
 		printf("Line: %d\n", msg->info_log_lines[i]);
 	}
 	
-	printf("\nERROR:\n");
+	printf("\nERROR_LOGS\n");
 
-	for(int i = 0 ; i<msg->error_count; i++)
+	for(i = 0 ; i<msg->error_count; i++)
 	{
 		printf("Line: %d\n", msg->error_log_lines[i]);
 
 	}
 	
-	printf("\nWarning:\n");
+	printf("\nWarning_LOGS\n");
 	
-	for(int i = 0; i<msg->warning_count; i++)
+	for(i = 0; i<msg->warning_count; i++)
 	{
 		printf("Line: %d\n", msg->warning_log_lines[i]);
 	}
