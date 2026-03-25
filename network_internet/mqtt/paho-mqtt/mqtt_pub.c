@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 
-#include "MQTTClinet.h"
+#include "MQTTClient.h"
 
-#define ADDRESS     "tcp://192.168.1.3:1880"
+#define ADDRESS     "tcp://192.168.1.3:1883"
 #define CLIENTID    "counter_publisher"
 #define TOPIC       "test/counter"
 #define QOS         1
@@ -15,12 +16,12 @@ int main()
 {
 
 	MQTTClient client; // this is an structure;
-	MQTTClient_connectOptions conn_opts = MQTTClient_ConnectOptions_initializer;
+	MQTTClient_connectOptions conn_opts = MQTTClient_connectOptions_initializer;
 	MQTTClient_deliveryToken token;
 
 	int rc;
 
-	rc = MQTTClient_create(&client, ADDRESS, CLIENTID, MQTTCLIENT_PERSISTENCE_NONE, Null);
+	rc = MQTTClient_create(&client, ADDRESS, CLIENTID, MQTTCLIENT_PERSISTENCE_NONE, NULL);
 
 	if (rc != MQTTCLIENT_SUCCESS) {
 		printf("Client Create failed\n");
@@ -44,7 +45,7 @@ int main()
 	char payload[50];
 
 	while(1){
-		sprintf(payload, "Count: %d", count++);
+		sprintf(payload, "Count: %d", counter++);
 
 		MQTTClient_message pubmsg = MQTTClient_message_initializer;
 		pubmsg.payload = payload;
@@ -59,7 +60,7 @@ int main()
 		sleep(1);
 	}
 
-	MQTTClient_disconenct(client, 1000);
+	MQTTClient_disconnect(client, 1000);
 	MQTTClient_destroy(&client);
 
 		return 0;
