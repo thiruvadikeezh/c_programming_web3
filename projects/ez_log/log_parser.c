@@ -66,17 +66,21 @@ int parse_the_file(const char* filename, LogState *out)
 		
 		if(strstr(line, "[INFO]"))
 		{
-			out->info_log_lines[out->info_count++] = line_number;
+			if(out->info_count < MAX){
+				out->info_log_lines[out->info_count++] = line_number;
+			}
 		}
 		else if (strstr(line, "[WARNING]"))
 		{
-		
-			out->warning_log_lines[out->warning_count++] = line_number;
+			if(out->warning_count < MAX){
+				out->warning_log_lines[out->warning_count++] = line_number;
+			}
 		}
 		else if (strstr(line, "[ERROR]"))
 		{
-
-			out->error_log_lines[out->error_count++] = line_number;
+			if(out->error_count < MAX){
+				out->error_log_lines[out->error_count++] = line_number;
+			}
 		}
 
 	}
@@ -112,7 +116,6 @@ void display_logs(LogState *msg)
 	{
 		printf("Line: %d\n", msg->warning_log_lines[i]);
 	}
-
 
 }
 

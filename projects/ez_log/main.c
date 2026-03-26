@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "log_parser.h"
+#include "ez_logger.h"
 
 #define file_loc "log.txt"
 
@@ -27,6 +28,13 @@ int main()
 	printf("WARNING: %d\n", state.warning_count);
 
 	display_logs(&state);
+
+	printf("\n\n now the log printng test is being started\n\n");
+
+
+	LOGI("system init");
+	LOGE("LTE not INIT");
+	LOGW("lte not working");
 	return 0;
 }
 

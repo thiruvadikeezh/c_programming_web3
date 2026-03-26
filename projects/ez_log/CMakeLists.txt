@@ -5,6 +5,7 @@ project(log_parser)
 set(SOURCES
 	main.c
 	log_parser.c
+	ez_logger.c
 )
 
 add_executable(log_parser ${SOURCES})
