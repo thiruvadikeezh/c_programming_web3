@@ -8,9 +8,9 @@
 #define HEIGHT 1000
 
 
-float segment_width = 200;
-float segment_height = 50;
-float segment_thickness = 50;
+float segment_width = 100;
+float segment_height = 20;
+float segment_thickness = 20;
 
 void DrawSegment(Vector2 center, bool horizontal)
 {
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
         ClearBackground(BLACK);
         Vector2 center = {WIDTH/2, HEIGHT/2};
         DrawSegment(center, 0);
-        DrawSegment(center,1);
+        DrawSegment(center, 1);
         EndDrawing();
     }
 
