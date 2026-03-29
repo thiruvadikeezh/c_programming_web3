@@ -32,10 +32,10 @@ void DrawSegment(Vector2 center, bool horizontal)
         {
 
             a = (Vector2){center.x - segment_width/2 - segment_thickness/2, center.y};
-            b = (Vector2){center.x - segment_width/2 - segment_thickness/2, center.y + segment_height/2};
-            c = (Vector2){center.x - segment_width/2 + segment_thickness/2, center.y + segment_height/2};
-            d = (Vector2){center.x - segment_width/2 - segment_thickness/2, center.y + segment_width - segment_thickness/2};
-            e = (Vector2){center.x - segment_width/2 + segment_thickness/2, center.y + segment_width - segment_thickness/2};
+            b = (Vector2){center.x - segment_width/2 - segment_thickness, center.y + segment_height/2};
+            c = (Vector2){center.x - segment_width/2 , center.y + segment_height/2};
+            d = (Vector2){center.x - segment_width/2 - segment_thickness, center.y + segment_width - segment_thickness/2};
+            e = (Vector2){center.x - segment_width/2 , center.y + segment_width - segment_thickness/2};
             f = (Vector2){center.x - segment_width/2 - segment_thickness/2, center.y + segment_width};
         }
 
@@ -43,7 +43,6 @@ void DrawSegment(Vector2 center, bool horizontal)
 
         Vector2 seg[] = {a, b, c, d, e, f};
         DrawTriangleStrip(seg, count, RAYWHITE);
-        EndDrawing();
 
 }
 
@@ -63,6 +62,8 @@ int main(int argc, char *argv[])
         ClearBackground(BLACK);
         Vector2 center = {WIDTH/2, HEIGHT/2};
         DrawSegment(center, 0);
+        DrawSegment(center,1);
+        EndDrawing();
     }
 
 	return 0;
