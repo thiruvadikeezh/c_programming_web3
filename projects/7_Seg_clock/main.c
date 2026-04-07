@@ -19,22 +19,29 @@ Vector2 hours []={
     (Vector2){500, 500}
 };
 
+typedef struct segment{
+    int a, b, c, d, e, f, g;
+} segment;
+
 // function for horizontal Segment which is top block 
 void draw_horizontal(Vector2 center)
 {
         int count = 6;
 
         Vector2 a, b, c, d, e, f;
- 
-        float left_edge_hori = center.x - segment_width/2 - segment_thickness/2;
-        float right_edge_hori = center.x + segment_width/2 + segment_thickness/2;
 
-        a = (Vector2){left_edge_hori, center.y};
-        b = (Vector2){center.x - segment_width/2, center.y + segment_height/2};
-        c = (Vector2){center.x - segment_width/2, center.y - segment_height/2};
-        d = (Vector2){center.x + segment_width/2, center.y + segment_height/2};
-        e = (Vector2){center.x + segment_width/2, center.y - segment_height/2};
-        f = (Vector2){right_edge_hori, center.y};
+        float half_wid = segment_width/2;
+
+        float half_thick = segment_thickness/2;
+
+        float edge = half_wid + half_thick;
+
+        a = (Vector2){center.x - edge, center.y};
+        b = (Vector2){center.x - half_wid, center.y + half_thick};
+        c = (Vector2){center.x - half_wid, center.y - half_thick};
+        d = (Vector2){center.x + half_wid, center.y + half_thick};
+        e = (Vector2){center.x + half_wid, center.y - half_thick};
+        f = (Vector2){center.x + edge, center.y};
 
 
         Vector2 seg[] = {a, b, c, d, e, f};
@@ -50,12 +57,27 @@ void draw_vertical(Vector2 center)
 
     Vector2 a, b, c, d, e, f;
 
-    a = (Vector2){(center.x - segment_width/2 - segment_thickness/2), center.y};
-    b = (Vector2){(center.x - segment_width/2 - segment_thickness), center.y + segment_height/2};
-    c = (Vector2){(center.x - segment_width/2), center.y + segment_height/2};
-    d = (Vector2){(center.x - segment_width/2 - segment_thickness), center.y + segment_width - segment_thickness/2};
-    e = (Vector2){(center.x - segment_width/2), center.y + segment_width - segment_thickness/2};
-    f = (Vector2){(center.x - segment_width/2 - segment_thickness/2), center.y + segment_width};
+    float half_wid = segment_width/2;
+
+    float half_thick = segment_thickness/2;
+
+    float edge = half_wid + half_thick;
+
+    a = (Vector2){(center.x), center.y - edge};
+    b = (Vector2){(center.x -half_thick), center.y - half_wid};
+    c = (Vector2){(center.x + half_thick), center.y - half_wid};
+    d = (Vector2){(center.x - half_thick), center.y + half_wid};
+    e = (Vector2){(center.x + half_thick), center.y + half_wid};
+    f = (Vector2){(center.x), center.y + edge};
+
+    printf("CENTER: (%f, %f)\n", center.x, center.y);
+
+    printf("a: (%f, %f)\n", a.x, a.y);
+    printf("b: (%f, %f)\n", b.x, b.y);
+    printf("c: (%f, %f)\n", c.x, c.y);
+    printf("d: (%f, %f)\n", d.x, d.y);
+    printf("e: (%f, %f)\n", e.x, e.y);
+    printf("f: (%f, %f)\n", f.x, f.y);
 
     Vector2 seg[] = {a, b, c, d, e, f};
     DrawTriangleStrip(seg, count, SKYBLUE);
