@@ -10,22 +10,25 @@
 #define HEIGHT 1000
 
 // defining the segment led sizes
-#define segment_width 200 
-#define segment_height 50
-#define segment_thickness 50
+#define segment_width 60
+#define segment_height 30
+#define segment_thickness 30
 
 // defining the hours offset
 Vector2 hours []={
-    (Vector2){500, 500}
+    (Vector2){500, 500},
+    (Vector2){700, 500}
 };
 
 typedef struct segment{
-    int a, b, c, d, e, f, g;
+    Vector2 A, B, C, D, E, F, G;
 } segment;
 
 // function for horizontal Segment which is top block 
-void draw_horizontal(Vector2 center)
+void draw_horizontal(Vector2 center, int on)
 {
+        Color color = on ? RED : DARKGRAY;
+
         int count = 6;
 
         Vector2 a, b, c, d, e, f;
@@ -45,14 +48,15 @@ void draw_horizontal(Vector2 center)
 
 
         Vector2 seg[] = {a, b, c, d, e, f};
-        DrawTriangleStrip(seg, count, LIME);
+        DrawTriangleStrip(seg, count, color);
 
 }
 
 // function for vertical block which has left and rigth segment
-void draw_vertical(Vector2 center)
+void draw_vertical(Vector2 center, int on)
 {
 
+    Color color = on ? RED : DARKGRAY;
     int count = 6;
 
     Vector2 a, b, c, d, e, f;
@@ -70,25 +74,39 @@ void draw_vertical(Vector2 center)
     e = (Vector2){(center.x + half_thick), center.y + half_wid};
     f = (Vector2){(center.x), center.y + edge};
 
-    printf("CENTER: (%f, %f)\n", center.x, center.y);
-
-    printf("a: (%f, %f)\n", a.x, a.y);
-    printf("b: (%f, %f)\n", b.x, b.y);
-    printf("c: (%f, %f)\n", c.x, c.y);
-    printf("d: (%f, %f)\n", d.x, d.y);
-    printf("e: (%f, %f)\n", e.x, e.y);
-    printf("f: (%f, %f)\n", f.x, f.y);
-
     Vector2 seg[] = {a, b, c, d, e, f};
-    DrawTriangleStrip(seg, count, SKYBLUE);
+    DrawTriangleStrip(seg, count, color);
                 
 }
 
 
 void DrawSegment(Vector2 *center)
 {
-    draw_horizontal(* center);
-    draw_vertical(* center);
+    segment val;
+
+    float half_wid = segment_width/2;
+
+    float half_thick = segment_thickness/2;
+
+    float edge = half_wid + half_thick;
+
+    val.A = (Vector2){center->x, center->y};
+    val.B = (Vector2){center->x + edge, center->y+edge};
+    val.C = (Vector2){center->x + edge, center->y+edge*3};
+    val.D = (Vector2){center->x, center->y + edge*2};
+    val.E = (Vector2){center->x - edge, center->y+edge*3};
+    val.F = (Vector2){center->x - edge, center->y+edge};
+    val.G = (Vector2){center->x, center->y+edge*4};
+
+    draw_horizontal(val.A, 1);
+    draw_horizontal(val.D, 1);
+    draw_horizontal(val.G, 1);
+
+    draw_vertical(val.B, 1);
+    draw_vertical(val.C, 1);
+
+    draw_vertical(val.E, 0);
+    draw_vertical(val.F, 0);
 }
 
 
@@ -108,7 +126,8 @@ int main(int argc, char *argv[])
         BeginDrawing();
         ClearBackground(BLACK);
 
-        DrawSegment(hours);
+        DrawSegment(&hours[0]);
+        DrawSegment(&hours[1]);
 
         EndDrawing();
     }
