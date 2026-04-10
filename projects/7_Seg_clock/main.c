@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 // lib for crawing vector graphics
 #include "raylib.h"
@@ -10,14 +11,38 @@
 #define HEIGHT 1000
 
 // defining the segment led sizes
-#define segment_width 60
+#define segment_width 50
 #define segment_height 30
-#define segment_thickness 30
+#define segment_thickness 20
+
+uint8_t digits[10] = {
+    0b0111111, // 0
+    0b0000110, // 1
+    0b1011011, // 2
+    0b1001111, // 3
+    0b1100110, // 4
+    0b1101101, // 5
+    0b1111101, // 6
+    0b0000111, // 7
+    0b1111111, // 8
+    0b1101111  // 9
+};
+
 
 // defining the hours offset
-Vector2 hours []={
-    (Vector2){500, 500},
-    (Vector2){700, 500}
+Vector2 hours[] = {
+    (Vector2){180, 480},
+    (Vector2){290, 480}
+};
+
+Vector2 minutes[] = {
+    (Vector2){460, 480},
+    (Vector2){570, 480}
+};
+
+Vector2 seconds[] = {
+    (Vector2){740, 480},
+    (Vector2){850, 480}
 };
 
 typedef struct segment{
@@ -80,8 +105,10 @@ void draw_vertical(Vector2 center, int on)
 }
 
 
-void DrawSegment(Vector2 *center)
+void DrawSegment(Vector2 *center, int digit)
 {
+    uint8_t pattern = digits[digit];
+
     segment val;
 
     float half_wid = segment_width/2;
@@ -93,20 +120,21 @@ void DrawSegment(Vector2 *center)
     val.A = (Vector2){center->x, center->y};
     val.B = (Vector2){center->x + edge, center->y+edge};
     val.C = (Vector2){center->x + edge, center->y+edge*3};
-    val.D = (Vector2){center->x, center->y + edge*2};
+    val.G = (Vector2){center->x, center->y + edge*2};
     val.E = (Vector2){center->x - edge, center->y+edge*3};
     val.F = (Vector2){center->x - edge, center->y+edge};
-    val.G = (Vector2){center->x, center->y+edge*4};
+    val.D = (Vector2){center->x, center->y+edge*4};
 
-    draw_horizontal(val.A, 1);
-    draw_horizontal(val.D, 1);
-    draw_horizontal(val.G, 1);
 
-    draw_vertical(val.B, 1);
-    draw_vertical(val.C, 1);
+    draw_horizontal(val.A, (pattern >> 0) & 1);
+    draw_vertical(val.B,   (pattern >> 1) & 1);
+    draw_vertical(val.C,   (pattern >> 2) & 1);
+    draw_horizontal(val.D, (pattern >> 3) & 1);
+    draw_vertical(val.E,   (pattern >> 4) & 1);
+    draw_vertical(val.F,   (pattern >> 5) & 1);
+    draw_horizontal(val.G, (pattern >> 6) & 1);
 
-    draw_vertical(val.E, 0);
-    draw_vertical(val.F, 0);
+
 }
 
 
@@ -126,8 +154,15 @@ int main(int argc, char *argv[])
         BeginDrawing();
         ClearBackground(BLACK);
 
-        DrawSegment(&hours[0]);
-        DrawSegment(&hours[1]);
+        DrawSegment(&hours[0], 0);
+        DrawSegment(&hours[1], 1);
+
+        DrawSegment(&minutes[0], 2);
+        DrawSegment(&minutes[1], 3);
+
+        DrawSegment(&seconds[0], 4);
+        DrawSegment(&seconds[1], 5);
+
 
         EndDrawing();
     }
