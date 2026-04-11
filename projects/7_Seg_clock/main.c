@@ -10,8 +10,8 @@
 #include "segment.h"
 
 // definign the windows 
-#define WIDTH  1000
-#define HEIGHT 1000
+#define WIDTH  1920
+#define HEIGHT 1080
 
 int main(int argc, char *argv[])
 {
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
         int s2 = sec % 10;
 
         BeginDrawing();
-        ClearBackground(BLACK);
+        ClearBackground(WHITE);
 
         draw_segment(&hours[0], h1);
         draw_segment(&hours[1], h2);

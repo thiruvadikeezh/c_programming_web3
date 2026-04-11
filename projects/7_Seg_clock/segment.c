@@ -5,7 +5,6 @@
 #define segment_height 30
 #define segment_thickness 20
 
-
 uint8_t digits[10] = {
     0b0111111, // 0
     0b0000110, // 1
@@ -18,7 +17,6 @@ uint8_t digits[10] = {
     0b1111111, // 8
     0b1101111  // 9
 };
-
 
 // defining the hours offset
 Vector2 hours[] = {
@@ -40,12 +38,14 @@ typedef struct segment{
     Vector2 A, B, C, D, E, F, G;
 } segment;
 
+Color my_gray = (Color){80, 80, 80, 60};
+Color my_black = (Color){0, 0, 0, 255};
+
 // function for hiorizontal Segment which is top block 
 void draw_horizontal(Vector2 center, int on)
 {
-    if (!on) return;
 
-    Color color = RED;
+    Color color = on ? my_black : my_gray;
 
     int count = 6;
 
@@ -73,9 +73,8 @@ void draw_horizontal(Vector2 center, int on)
 // function for vertical block which has left and rigth segment
 void draw_vertical(Vector2 center, int on)
 {
-    if (!on) return;
 
-    Color color = RED;
+    Color color = on ? my_black : my_gray;
 
     int count = 6;
 
