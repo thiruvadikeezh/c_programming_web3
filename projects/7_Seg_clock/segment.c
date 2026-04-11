@@ -5,6 +5,8 @@
 #define segment_height 30
 #define segment_thickness 20
 
+#define circle_radius 10
+
 uint8_t digits[10] = {
     0b0111111, // 0
     0b0000110, // 1
@@ -32,6 +34,11 @@ Vector2 minutes[] = {
 Vector2 seconds[] = {
     (Vector2){740, 480},
     (Vector2){850, 480}
+};
+
+Vector2 colons[] = {
+    (Vector2){100, 100},
+    (Vector2){100, 500}
 };
 
 typedef struct segment{
@@ -96,6 +103,16 @@ void draw_vertical(Vector2 center, int on)
     Vector2 seg[] = {a, b, c, d, e, f};
     DrawTriangleStrip(seg, count, color);
                 
+}
+
+void draw_colon(Vector2 center, bool on)
+{
+    Color color = on ? my_black : my_gray;
+
+    DrawCircle(center.x, center.y, circle_radius, color);
+
+    DrawCircle(center.x, center.y+100, circle_radius, color);
+
 }
 
 

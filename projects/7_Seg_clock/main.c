@@ -36,11 +36,16 @@ int main(int argc, char *argv[])
         int s1 = sec / 10;
         int s2 = sec % 10;
 
+        bool show_colon = (sec % 2 == 0);
+
         BeginDrawing();
         ClearBackground(WHITE);
 
         draw_segment(&hours[0], h1);
         draw_segment(&hours[1], h2);
+
+        draw_colon(colons[0], show_colon);
+        draw_colon(colons[1], show_colon);
 
         draw_segment(&minutes[0], m1);
         draw_segment(&minutes[1], m2);
