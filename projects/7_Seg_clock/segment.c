@@ -43,36 +43,40 @@ typedef struct segment{
 // function for hiorizontal Segment which is top block 
 void draw_horizontal(Vector2 center, int on)
 {
-        Color color = on ? RED : DARKGRAY;
+    if (!on) return;
 
-        int count = 6;
+    Color color = RED;
 
-        Vector2 a, b, c, d, e, f;
+    int count = 6;
 
-        float half_wid = segment_width/2;
+    Vector2 a, b, c, d, e, f;
 
-        float half_thick = segment_thickness/2;
+    float half_wid = segment_width/2;
 
-        float edge = half_wid + half_thick;
+    float half_thick = segment_thickness/2;
 
-        a = (Vector2){center.x - edge, center.y};
-        b = (Vector2){center.x - half_wid, center.y + half_thick};
-        c = (Vector2){center.x - half_wid, center.y - half_thick};
-        d = (Vector2){center.x + half_wid, center.y + half_thick};
-        e = (Vector2){center.x + half_wid, center.y - half_thick};
-        f = (Vector2){center.x + edge, center.y};
+    float edge = half_wid + half_thick;
+
+    a = (Vector2){center.x - edge, center.y};
+    b = (Vector2){center.x - half_wid, center.y + half_thick};
+    c = (Vector2){center.x - half_wid, center.y - half_thick};
+    d = (Vector2){center.x + half_wid, center.y + half_thick};
+    e = (Vector2){center.x + half_wid, center.y - half_thick};
+    f = (Vector2){center.x + edge, center.y};
 
 
-        Vector2 seg[] = {a, b, c, d, e, f};
-        DrawTriangleStrip(seg, count, color);
+    Vector2 seg[] = {a, b, c, d, e, f};
+    DrawTriangleStrip(seg, count, color);
 
 }
 
 // function for vertical block which has left and rigth segment
 void draw_vertical(Vector2 center, int on)
 {
+    if (!on) return;
 
-    Color color = on ? RED : DARKGRAY;
+    Color color = RED;
+
     int count = 6;
 
     Vector2 a, b, c, d, e, f;
