@@ -37,8 +37,8 @@ Vector2 seconds[] = {
 };
 
 Vector2 colons[] = {
-    (Vector2){100, 100},
-    (Vector2){100, 500}
+    (Vector2){375, 500},
+    (Vector2){660, 500}
 };
 
 typedef struct segment{
