@@ -1,68 +1,39 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
+typedef struct node{
+    int val;
+    struct node *next_node;
+}node;
 
 
-struct Node {
-	int data;
-	struct Node *next;
-};
-
-
-
-void remove_node(struct Node **head_ref, struct Node *entry)
+void create_node(node *n, int num)
 {
-	struct Node **indirect = head_ref;
+    *n = malloc(sizeof(struct node));
 
+    (*n)->val = num;
+    (*n)->next_node = NULL;
 
-	while ( *indirect != NULL && *indirect != entry)
-		indirect = &(*indirect)->next;
-
-	if(*indirect == NULL)
-		return;
-
-	*indirect = entry->next;
 }
 
+void add_node(node *n1, node *n2)
+{
+    (*n1)->next_node = (*n2);
+
+}
 
 int main()
 {
-	struct Node n1, n2, n3;
+    node n1;
+    node n2;
 
-	n1.data = 1;
-	n2.data = 2;
-	n3.data = 3;
+    create_node(&n1, 10);
+    create_node(&n2, 20);
 
-	n1.next = &n2;
-	n2.next = &n3;
-	n3.next = NULL;
+    add_node(&n1, &n2);
 
-	struct Node *head = &n1;
+    return 0;
 
-	printf("Before:\n");
-
-	struct Node *temp = head;
-	while(temp) {
-
-		printf("%d -> ", temp->data);
-		temp = temp->next;
-	}
-	printf("NULL\n");
-	
-
-	remove_node(&head, &n2);
-
-	printf("\nAfter Removing 2:\n");
-
-	temp = head;
-
-
-	while( temp) {
-		printf("%d ->", temp->data);
-		temp = temp -> next;
-	}
-	printf(" NULL\n");
-
-	return 0;
 }
 
