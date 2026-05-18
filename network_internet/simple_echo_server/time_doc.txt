@@ -1,0 +1,96 @@
+TIME(3am)	    GNU Awk Extension Modules		TIME(3am)
+
+NAME
+     time - time functions for gawk
+
+SYNOPSIS
+     @load "time"
+
+     time = gettimeofday()
+     ret = sleep(amount)
+     timeval = strptime(string, format)
+
+DESCRIPTION
+     The time extension adds three functions named gettimeofday()
+     sleep(), and strptime(), as follows.
+
+     gettimeofday()
+	    This function returns the number of seconds since the
+	    Epoch  as a floating-point value. It should have sub‐
+	    second precision.  It returns -1 upon error and  sets
+	    ERRNO to indicate the problem.
+
+     sleep(seconds)
+	    This  function attempts to sleep for the given amount
+	    of seconds, which may include a  fractional	 portion.
+	    If	seconds	 is  negative,	or  the	 attempt to sleep
+	    fails, then it returns -1 and sets ERRNO.  Otherwise,
+	    the function should return 0 after sleeping	 for  the
+	    indicated amount of time.
+
+     strptime()
+	    This  function  takes  two arguments, a string repre‐
+	    senting a date and time, and a format string describ‐
+	    ing the data in the string. It calls  the  C  library
+	    strptime(3)	 function  with the given values.  If the
+	    parsing succeeds, the results are passed to the C li‐
+	    brary mktime(3) function, and its result is returned,
+	    expressing the time in seconds since the epoch in the
+	    current local timezone, regardless	of  any	 timezone
+	    specified in the string arguments.	(This is the same
+	    as gawk's built-in systime() function.)  Otherwise it
+	    returns  -1 upon error. In the latter case, ERRNO in‐
+	    dicates the problem.
+
+BUGS
+     The underlying strptime(3) C library routine apparently  ig‐
+     nores any time zone indication in the date string, producing
+     values  relative to the current time zone.	 It might be bet‐
+     ter to have this routine return a	string	similar	 to  what
+     gawk's mktime() function expects, but we ran out of energy.
+
+EXAMPLE
+     @load "time"
+     ...
+     printf "It is now %g seconds since the Epoch\n", gettimeofday()
+     ...
+     printf "Pausing for a while... " ; sleep(2.5) ; print "done"
+     ...
+     format = "%b %d %H:%M:%S %Z %Y"
+     now = systime()
+     print now, "<" (result = strftime(format, now)) ">",
+     then = strptime(result, format)
+     print strftime(format, then)
+
+SEE ALSO
+     GAWK:   Effective	 AWK   Programming,  filefuncs(3am),  fn‐
+     match(3am),  fork(3am),  inplace(3am),  ordchr(3am),   read‐
+     dir(3am), readfile(3am), revoutput(3am), rwarray(3am).
+
+     gettimeofday(2), nanosleep(2), select(2), and strptime(3).
+
+AUTHOR
+     Arnold Robbins, arnold@skeeve.com.
+
+COPYING PERMISSIONS
+     Copyright	©  2012, 2013, 2018, 2022, 2023, 2024, Free Soft‐
+     ware Foundation, Inc.
+     Copyright © 2019, Arnold David Robbins.
+
+     Permission is granted to make and distribute verbatim copies
+     of this manual page provided the copyright notice	and  this
+     permission notice are preserved on all copies.
+
+     Permission	 is  granted to copy and distribute modified ver‐
+     sions of this manual page under the conditions for	 verbatim
+     copying,  provided that the entire resulting derived work is
+     distributed under the terms of a permission notice identical
+     to this one.
+
+     Permission is granted to copy and distribute translations of
+     this manual page into another language, under the above con‐
+     ditions for modified versions, except that	 this  permission
+     notice  may be stated in a translation approved by the Foun‐
+     dation.
+
+Free Software Foundation   Nov 13 2024			TIME(3am)
