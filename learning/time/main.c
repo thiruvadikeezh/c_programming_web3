@@ -22,17 +22,23 @@ int main(){
 	time_t times;
 
 	int secs;
+
+	struct timespec ts = {.tv_sec = 1, .tv_nsec= 0};
+
 	while (1)
 	{
-		times = time(NULL);
+		result = time(NULL);
 
-		t = localtime(&times);
+		t = localtime(&result);
 
 		secs = t->tm_sec;
 
 		printf("the second is %d\n", secs);
-		sleep(1);
+
+		nanosleep(&ts, NULL);
 	}
+
+
 
 
 	return 0;
