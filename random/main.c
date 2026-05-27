@@ -1,29 +1,20 @@
 #include <stdio.h>
 
 
-typedef struct data
-{
-	int id;
-}data;
-
 int main()
 {
-	data obj;
+	int a , b;
 
-	data *id_1 = &obj;
+	a = 5; 
+	b = 10;
 
-	id_1->id = 5;
+	a = a + b;
 
-	printf("The Data Inside The Struct Before %d\n", id_1->id );
+	b = a -b;
 
-	id_1->id = 10;
+	a = a -b;
 
-	printf("The Data After Modification is %d\n", id_1->id);
-
-	id_1->id = 15;
-
-	printf("The Data After Modification 2 is %d\n", id_1->id);
+	printf ("a%d b%d\n", a, b);
 
 	return 0;
-
 }
