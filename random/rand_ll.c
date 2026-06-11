@@ -2,45 +2,41 @@
 
 
 typedef struct node{
-	int num;
-	struct node *nodes;
+	int data;
+	struct node *prev;
+	struct node *next;
+
 }node;
 
-
-
-
-void create_node( node *n, int val)
+typedef struct
 {
-	n->num = val;
 
-	n->nodes = NULL;
+	node *head;
+	node *tail;
+	size_t count;
 
+}list;
+
+void list_init(list *l)
+{
+	l->head = NULL;
+	l->tail = NULL;
+	l->count = 0;
 }
 
-
-void join_node( node *n1 , node *n2 )
-
+node *node_create(int value)
 {
-	n1->nodes = n2;
+	node *n = malloc(sizeof(node));
 
+	if(!n)
+		return NULL;
+
+	n->data = value;
+	n->prev = NULL;
+	n->next = NULL;
+
+
+	return n;
 }
 
-int main()
-{
-	node n1;
-
-	node n2;
-
-	create_node(&n1, 10);
-	create_node(&n2, 20);
-
-	join_node(&n1, &n2);
-
-	printf(" node 1 val is %d \n node 2 val is %d \n", n1.num, n2.num);
-
-	printf(" node 2 value access from n1 %d\n ", n1.nodes->num);
-
-	return 0;
-
-}
-
+void append(
