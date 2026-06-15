@@ -1,6 +1,8 @@
-#include <sys/socket.h>
+#include <stdio.h>
 
+#include <sys/socket.h>
 #include <arpa/inet.h>
+#include <netinet/in.h>
 
 
 int main()
@@ -20,17 +22,29 @@ int main()
 
 	printf("socket creation successful");
 
-	struct sockaddr_in bind_addr;
+	struct sockaddr_in addr;
 
-	bind_addr.sin_port = htons(6969);
-	bind_addr.sin_family = AF_INET;
+	addr.sin_family = AF_INET;
 
-	bind_addr.sin_addr
+	addr.sin_port = htons(6969);
 
-	int rc = bind(tcp_socket, 
+	addr.sin_addr.s_addr = INADDR_ANY;
+
+
+
+	int rc = bind(tcp_socket, (const struct sockaddr *)&addr, sizeof(addr));
+
+
+	if (rc == -1)
+	{
+		perror("bind( ()");
+
+		return -1;
+	}
+	printf("port accurately bindned\n");
+
 
 	return 0;
-
 
 }
 
