@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include <unistd.h>
+
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
@@ -53,6 +55,10 @@ int main()
 		return -1;
 	}
 
+	printf("we are listening\n");
+
+
+
 
 	int client_fd = accept(tcp_socket, NULL, NULL);
 
@@ -63,31 +69,60 @@ int main()
 		return -1;
 	}
 
+	printf(" we are accepting\n");
+
 	char buffer[1024];
-
-
-	ssize_t bytes_recv = recv(client_fd, buffer, sizeof(buffer), 0);
-
-	if ( bytes_recv == -1)
+	while(1)
 	{
-		perror("recv failed");
+
+
+		ssize_t bytes_recv = recv(client_fd, buffer, sizeof(buffer), 0);
+
+		if ( bytes_recv == -1)
+		{
+			perror("recv failed");
+			break;
+		}
+
+		if (bytes_recv == 0)
+		{
+			printf("The Client Disconencted \n");
+			break;
+		}
+
+
+
+		if (bytes_recv > 0)
+		{
+			
+			buffer[bytes_recv] = '\0';
+
+		}
+
+		printf(" now the recv function is working\n");
+
+		printf("%s\n", buffer);
+
+		ssize_t bytes_send = send(client_fd, buffer, bytes_recv, 0);
+
+		if (bytes_send == -1)
+		{
+			perror("send faile");
+
+			break;
+		}
+
+
+
+		printf("The send function is working\n");
 	}
 
-	if (bytes_recv > 0)
-	{
-		
-		buffer[bytes_recv] = '\0';
+	
+	close(tcp_socket);
+	close(client_fd);
 
-	}
+	printf(" didi i came here \n");
 
-	printf("%s\n", buffer);
-
-	ssize_t bytes_send = send(client_fd, buffer, bytes_recv, 0);
-
-	if (bytes_send == -1)
-	{
-		perror("send faile");
-	}
 
 
 
