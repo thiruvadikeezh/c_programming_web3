@@ -1,133 +1,99 @@
 #include <stdio.h>
 
 #include <unistd.h>
+#include <string.h>
 
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
 
+int handle_client(int client_socket)
+{
+
+	ssize_t n = 0;
+	char buffer[1024];
+
+	for(;;)
+	{	
+		memset(buffer, 0, sizeof(buffer));
+		n = read(client_socket, buffer, sizeof(buffer)-1);
+		if( n < 0)
+		{
+			perror("read faild");
+			return -1;
+		}
+
+		if ( n == 0 )
+		{
+			printf("conenction closed successful\n");
+			break;
+		}
+		printf("-> %s\n", buffer);
+	}
+	return 0;
+}
 
 int main()
 {
-	int tcp_socket = socket(
+	int rc = 0;
+	struct sockaddr_in addr = {0};
+	int tcp_socket = 0;
+	int client_fd = 0;
+	int ret = 0;
+	char buffer[1024];
+	int enabled = true;
+
+	tcp_socket = socket(
 		AF_INET, /*ipv4*/
 		SOCK_STREAM, /*tcp*/
 		0
 	);
 
-	if (tcp_socket == -1)
+	if (tcp_socket < 1)
 	{
 		perror("socket()");
-
 		return 1;
 	}
-
 	printf("socket creation successful\n");
 
-	struct sockaddr_in addr;
+	(void)setsockopt(tcp_socket, SOL_SOCKET, SO_REUSEADDR, &enabled, sizeof(enabled));
 
 	addr.sin_family = AF_INET;
-
 	addr.sin_port = htons(6969);
-
 	addr.sin_addr.s_addr = INADDR_ANY;
 
-
-
-	int bind_rc = bind(tcp_socket, (const struct sockaddr *)&addr, sizeof(addr));
-
-
-	if (bind_rc == -1)
+	rc = bind(tcp_socket, (const struct sockaddr *)&addr, sizeof(addr));
+	if (rc < 0)
 	{
 		perror("bind( ()");
-
-		return -1;
+		ret = 1;
+		goto exit;
 	}
 	printf("port accurately bindned\n");
 
 
-	int listen_rc = listen(tcp_socket, 5);
-
-	if (listen_rc == -1)
+	rc = listen(tcp_socket, 5);
+	if (rc < 0)
 	{
-		perror("liten failed");
-
-		return -1;
+		perror("listen failed");
+		ret = 1;
+		goto exit;
 	}
-
-	printf("we are listening\n");
-
-
-
-
-	int client_fd = accept(tcp_socket, NULL, NULL);
-
-	if (client_fd == -1)
-	{
-		perror("accept failed");
-
-		return -1;
-	}
-
-	printf(" we are accepting\n");
-
-	char buffer[1024];
-	while(1)
-	{
-
-
-		ssize_t bytes_recv = recv(client_fd, buffer, sizeof(buffer), 0);
-
-		if ( bytes_recv == -1)
-		{
-			perror("recv failed");
-			break;
-		}
-
-		if (bytes_recv == 0)
-		{
-			printf("The Client Disconencted \n");
-			break;
-		}
-
-
-
-		if (bytes_recv > 0)
-		{
-			
-			buffer[bytes_recv] = '\0';
-
-		}
-
-		printf(" now the recv function is working\n");
-
-		printf("%s\n", buffer);
-
-		ssize_t bytes_send = send(client_fd, buffer, bytes_recv, 0);
-
-		if (bytes_send == -1)
-		{
-			perror("send faile");
-
-			break;
-		}
-
-
-
-		printf("The send function is working\n");
-	}
-
+	printf("lISTEN SUCCESSFULL\n");
 	
+	for(;;)
+	{
+		printf("Waiting for conenctions\n");
+		client_fd = accept(tcp_socket, NULL, NULL);
+		printf("got an conenction\n");
+
+		rc = handle_client(client_fd);
+
+	}
+
+exit:
 	close(tcp_socket);
-	close(client_fd);
-
-	printf(" didi i came here \n");
-
-
-
-
-	return 0;
-
+	return ret;
 }
 
 
