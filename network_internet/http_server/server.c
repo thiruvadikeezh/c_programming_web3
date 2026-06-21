@@ -16,6 +16,7 @@ int handle_client(int client_socket)
 	for(;;)
 	{	
 		memset(buffer, 0, sizeof(buffer));
+
 		n = read(client_socket, buffer, sizeof(buffer)-1);
 		if( n < 0)
 		{
@@ -28,8 +29,48 @@ int handle_client(int client_socket)
 			printf("conenction closed successful\n");
 			break;
 		}
-		printf("-> %s\n", buffer);
+
+		buffer[n] = '\0';
+		printf("-----------\n");
+		printf("Raw Request:\n%s\n", buffer);
+
+		char method[32];
+		char path[256];
+		char version[32];
+
+		sscanf(buffer, "%31s %255s %31s", method, path, version);
+
+		printf("Method   : %s\n", method);
+		printf("Path     : %s\n", path);
+		printf("Version  : %s\n", version);
+
+		printf("-------\n");
+		
+		if(strcmp(path, "/") == 0)
+		{
+			printf("HOME\n");
+			const char *response =
+				"HTTP/1.1 200 OK\r\n"
+				"Content-Type: text/html\r\n"
+				"\r\n"
+				"<h1>HOME</h1>";
+
+			n = write(client_socket, response, strlen(response));
+			if ( n < 0)
+			{
+				perror("write()");
+			}
+
+			break;
+		}
+		else
+		{
+			printf("404 NOT FOUND\n");
+		}
+
+
 	}
+	close(client_socket);
 	return 0;
 }
 
@@ -49,7 +90,7 @@ int main()
 		0
 	);
 
-	if (tcp_socket < 1)
+	if (tcp_socket < 0)
 	{
 		perror("socket()");
 		return 1;
@@ -85,14 +126,31 @@ int main()
 	{
 		printf("Waiting for conenctions\n");
 		client_fd = accept(tcp_socket, NULL, NULL);
+
+		if (client_fd < 0)
+		{
+			perror("acept()");
+
+			ret = 1;
+			goto exit;
+		}
+
 		printf("got an conenction\n");
 
 		rc = handle_client(client_fd);
+
+		if ( rc < 0)
+		{
+			perror("read failed");
+			ret = 1;
+			goto exit;
+		}
 
 	}
 
 exit:
 	close(tcp_socket);
+	close(client_fd);
 	return ret;
 }
 
