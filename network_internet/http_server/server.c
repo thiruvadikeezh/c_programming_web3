@@ -63,6 +63,48 @@ int handle_client(int client_socket)
 
 			break;
 		}
+
+		else if (strcmp(path, "/hello.txt") == 0)
+		{
+			printf("hello.txt\n");
+
+			FILE *fp = fopen("hello.txt", "rb");
+			
+			if (fp == NULL)
+			{
+
+
+				const char *response =
+					"HTTP/1.1 404 Not Found\r\n"
+					"Content-Type: text/plain\r\n"
+					"\r\n"
+					"hello.txt not found";
+
+				write(client_socket, response, strlen(response));
+
+				break;
+			}
+			
+			const char *header =
+				"HTTP/1.1 200 OK\r\n"
+				"Content-Type: text/plain\r\n"
+				"\r\n";
+
+			write(client_socket, header, strlen(header));
+
+
+			char file_buffer[1024];
+			size_t bytes_read;
+
+			while ((bytes_read = fread(file_buffer, 1, sizeof(file_buffer), fp)) > 0)
+			{
+				write(client_socket, file_buffer, bytes_read);
+			}
+
+			fclose(fp);
+			break;
+		}
+
 		else
 		{
 			printf("404 NOT FOUND\n");
