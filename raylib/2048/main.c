@@ -1,7 +1,6 @@
 #include <raylib.h>
 
 #define WIDTH 1920
-
 #define HEIGHT 1080
 
 #define BG BLACK
@@ -17,7 +16,6 @@
 
 #define BORDER_X ((WIDTH - BORDER_SIZE) / 2 )
 #define BORDER_Y ((HEIGHT - BORDER_SIZE) / 2 )
-
 
 typedef struct
 {
@@ -69,7 +67,11 @@ void update_position(grid *grid, Vector2 *small_pos)
         BORDER_Y + grid->grid_y * CELL_SIZE
     };
 }
+void move_left(int *board)
+{
 
+
+}
 int main(void)
 {
 	grid grid = { 1, 1};
