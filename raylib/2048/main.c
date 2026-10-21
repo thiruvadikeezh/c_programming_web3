@@ -1,4 +1,6 @@
 #include <raylib.h>
+#include <stdio.h>
+#include <string.h>
 
 #define WIDTH 1920
 #define HEIGHT 1080
@@ -76,18 +78,7 @@ void move_left(int grid[][4])
 			grid[i][k] =0;
 			k++;
 		}
-
 	}
-
-	for(int i = 0; i <4; i++)
-	{
-		for(int j = 0; j < 4; j++)
-		{
-			printf("[%d]", grid[i][j]);
-		}
-		printf("\n");
-	}
-
 }
 
 void move_right(int grid[][4])
@@ -138,15 +129,6 @@ void move_right(int grid[][4])
 			grid[i][k] =0;
 			k--;
 		}
-	}
-
-	for(int i = 0; i <4; i++)
-	{
-		for(int j = 0; j < 4; j++)
-		{
-			printf("[%d]", grid[i][j]);
-		}
-		printf("\n");
 	}
 }
 
@@ -204,16 +186,6 @@ void move_up( int grid[][4])
 		}
 
 	}
-
-	for(int i = 0; i <4; i++)
-	{
-		for(int j = 0; j < 4; j++)
-		{
-			printf("[%d]", grid[i][j]);
-		}
-		printf("\n");
-	}
-
 }
 
 void move_down(int grid[][4])
@@ -265,18 +237,7 @@ void move_down(int grid[][4])
 			k--;
 		}
 	}
-
-	for(int i = 0; i <4; i++)
-	{
-		for(int j = 0; j < 4; j++)
-		{
-			printf("[%d]", grid[i][j]);
-		}
-		printf("\n");
-	}
 }
-
-
 
 void border_square_init(Vector2 *border_size, Vector2 *border_pos)
 {
@@ -303,40 +264,99 @@ void small_square_init(
 	};
 }
 
-void update_position(grid *grid, Vector2 *small_pos)
+void calculate_position(int grid_x, int grid_y, Vector2 *small_pos)
 {
-    if (IsKeyPressed(KEY_RIGHT) && grid->grid_x < GRID_COUNT - 1)
-        grid->grid_x++;
-
-    if (IsKeyPressed(KEY_LEFT) && grid->grid_x > 0)
-        grid->grid_x--;
-
-    if (IsKeyPressed(KEY_UP) && grid->grid_y > 0)
-        grid->grid_y--;
-
-    if (IsKeyPressed(KEY_DOWN) && grid->grid_y < GRID_COUNT - 1)
-        grid->grid_y++;
-
-    *small_pos = (Vector2){
-        BORDER_X + grid->grid_x * CELL_SIZE,
-        BORDER_Y + grid->grid_y * CELL_SIZE
-    };
+	*small_pos = (Vector2){
+		BORDER_X + grid_x * CELL_SIZE,
+		BORDER_Y + grid_y * CELL_SIZE
+	};
 }
-void move_left(int *board)
+
+int empty(int board [][4])
 {
+	int empty_count = 0;
 
+	for(int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j< 4; j++)
+		{
+			if( board[i][j] == 0)
+			{
+				empty_count++;
+			}
+		}
+	}
 
+	return empty_count;
 }
+
+void spawn_tile(int board[][4])
+{
+    int empty_count = empty(board);
+
+    if (empty_count == 0)
+        return;
+
+    int random_index = GetRandomValue(0, empty_count - 1);
+    int seen = 0;
+
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (board[i][j] == 0)
+            {
+                if (seen == random_index)
+                {
+                    board[i][j] = 2;
+                    return;
+                }
+
+                seen++;
+            }
+        }
+    }
+}
+
+void update_position(int board[][4])
+{
+	int before[4][4];
+	memcpy(before, board, sizeof(before));
+
+    if (IsKeyPressed(KEY_RIGHT))
+	{
+		move_right(board);
+	}
+
+    else if (IsKeyPressed(KEY_LEFT))
+	{
+		move_left(board);
+	}
+
+    else if (IsKeyPressed(KEY_UP))
+	{
+		move_up(board);
+	}
+
+    else if (IsKeyPressed(KEY_DOWN))
+	{
+		move_down(board);
+	}
+
+	if( memcmp(before, board, sizeof(before)) != 0)
+		spawn_tile(board);
+}
+
+
 int main(void)
 {
-	grid grid = { 1, 1};
+	grid grid = {1, 1};
 
 	Vector2 border_size = {0};
 	Vector2 border_pos = {0};
 
 	Vector2 small_size = {0};
 	Vector2 small_pos = {0};
-
 
 	int board[GRID_COUNT][GRID_COUNT] = {0};
 	
@@ -345,15 +365,38 @@ int main(void)
 
 	InitWindow(WIDTH, HEIGHT, "2048");
 
+	spawn_tile(board);
+	spawn_tile(board);
+
 	while(!WindowShouldClose())
 	{
 
 		BeginDrawing();
 		ClearBackground(BG);
-		update_position(&grid, &small_pos);
-
+		
 		DrawRectangleV(border_pos, border_size, BORDER_COLOR);
+
+		update_position(board);
+
+		for(int i = 0; i<4;i++)
+		{
+			for(int j = 0 ; j<4; j++)
+			{
+				if(board[i][j] != 0)
+				{
+					calculate_position(j, i, &small_pos);
+					DrawRectangleV(small_pos, small_size, SMALL_COLOR);
+					char text[12];
+					snprintf(text, sizeof(text), "%d", board[i][j]);
+					DrawText(text, (int)small_pos.x, (int)small_pos.y, 30, GREEN);
+				}
+			}
+		}
+		
+
+		/*
 		DrawRectangleV(small_pos, small_size, SMALL_COLOR);
+		*/
 
 		EndDrawing();
 	}
